@@ -1,0 +1,77 @@
+# ========== Global ==========
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Python virtual environments
+venv/
+env/
+ENV/
+.venv/
+.Python
+
+# ========== Django Backend ==========
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django secret files
+*.sqlite3
+db.sqlite3
+*.env
+.env.*
+
+# Django migration cache
+**/migrations/*.pyc
+**/migrations/__pycache__/
+**/migrations/*.py
+
+# Local server files
+*.pid
+
+# Pytest
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# ========== Node.js (Vite React Frontend) ==========
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Vite cache
+.vite/
+.vitepress/
+*.tsbuildinfo
+
+# Env files
+*.env.local
+*.env.development
+*.env.production
+.env
+
+# ========== Other ==========
+
+# npm/yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local config
+*.local
