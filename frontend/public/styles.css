@@ -1,11 +1,13 @@
 :root {
   --bg: #f9f9f9;
-  --white: #fff;
+  --white: #ffffff;
   --text: #1c1c1e;
   --gray: #8e8e93;
   --blue: #007aff;
+  --light-blue: #dbeaff;
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   --radius: 14px;
+  --transition: all 0.2s ease;
 }
 
 * {
@@ -17,14 +19,17 @@
 html {
   font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--bg);
+  scroll-behavior: smooth;
 }
 
 body {
   padding: 30px;
   color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
-/* ------------HEADER */
+/* ------------ HEADER */
 header {
   background: var(--white);
   padding: 24px 40px;
@@ -34,6 +39,7 @@ header {
   margin-bottom: 40px;
   display: flex;
   align-items: center;
+  transition: var(--transition);
 }
 
 header h1 {
@@ -43,23 +49,33 @@ header h1 {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
+  color: var(--text);
 }
-/* FOOTER */
+
+/* ------------ FOOTER */
 footer {
   text-align: center;
   margin-top: 60px;
   color: var(--gray);
   font-size: 0.85rem;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  opacity: 0.8;
+  transition: var(--transition);
 }
 
-/* ------------NOTE CARD */
+/* ------------ NOTE CONTAINER */
 .notes-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 20px;
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+/* ------------ NOTE CARD */
 .note {
   background: var(--white);
   border-radius: var(--radius);
@@ -67,46 +83,51 @@ footer {
   padding: 20px;
   width: 300px;
   margin: 20px 0;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
   position: relative;
+  border: 1px solid #f0f0f0;
 }
 
 .note:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .note h1 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 10px;
+  color: var(--text);
 }
 
 .note p {
   font-size: 1rem;
   color: #444;
-  line-height: 1.5;
+  line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-word;
+  padding-top: 4px;
 }
 
-/* ---------DELETE BUTTON */
+/* DELETE BUTTON */
 .note button {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 16px;
+  right: 16px;
   background: none;
   border: none;
   color: #ff3b30;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .note button:hover {
-  color: #c1271a;
+  color: #d10000;
+  transform: scale(1.1);
 }
 
-/* CREATE AREA */
+/* ------------ CREATE AREA */
 form.create-note {
   background: var(--white);
   padding: 20px;
@@ -118,6 +139,8 @@ form.create-note {
   flex-direction: column;
   gap: 16px;
   position: relative;
+  border: 1px solid #eee;
+  transition: var(--transition);
 }
 
 form.create-note input,
@@ -128,8 +151,8 @@ form.create-note textarea {
   font-size: 1rem;
   font-family: inherit;
   resize: none;
-  transition: border 0.2s ease;
   background-color: #fafafa;
+  transition: var(--transition);
 }
 
 form.create-note input:focus,
@@ -137,9 +160,10 @@ form.create-note textarea:focus {
   border-color: var(--blue);
   outline: none;
   background-color: var(--white);
+  box-shadow: 0 0 0 2px var(--light-blue);
 }
 
-/* -------------BUTTON */
+/* MUI FAB BUTTON */
 form.create-note .MuiFab-root {
   position: absolute;
   right: 16px;
@@ -147,9 +171,10 @@ form.create-note .MuiFab-root {
   background: var(--blue) !important;
   color: var(--white);
   box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 form.create-note .MuiFab-root:hover {
   background: #005ecb !important;
+  transform: scale(1.05);
 }

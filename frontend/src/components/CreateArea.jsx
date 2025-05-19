@@ -23,13 +23,16 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
+    if (!note.title.trim() && !note.content.trim()) {
+      event.preventDefault();
+      return; // Don't allow empty notes
+    }
+
     props.onAdd(note);
-    setNote({
-      title: "",
-      content: "",
-    });
+    setNote({ title: "", content: "" });
     event.preventDefault();
   }
+
 
   function expand() {
     setExpanded(true);
