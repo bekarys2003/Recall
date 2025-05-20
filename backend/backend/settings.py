@@ -28,8 +28,8 @@ ALLOWED_HOSTS = [
     "recall-op1f.onrender.com",  # for production
     "bekarys2003.github.io",     # for GitHub frontend
 ]
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
