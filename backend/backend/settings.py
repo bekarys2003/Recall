@@ -14,10 +14,22 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "https://bekarys2003.github.io",
+]
 
+ALLOWED_HOSTS = [
+    "127.0.0.1",  # for local dev
+    "localhost",  # optional, but common
+    "recall-op1f.onrender.com",  # for production
+    "bekarys2003.github.io",     # for GitHub frontend
+]
+from dotenv import load_dotenv
+load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -26,9 +38,6 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "your-local-fallback-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DJANGO_DEBUG", "False") == "True"
-
-ALLOWED_HOSTS = ["recall-op1f.onrender.com", "bekarys2003.github.io"]
-
 
 
 

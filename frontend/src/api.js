@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://recall-op1f.onrender.com/api/",
+  baseURL: "http://127.0.0.1:8000/api/",
 });
 
 export function getNotes() {
@@ -9,6 +9,7 @@ export function getNotes() {
 }
 
 export function createNote(note) {
+  console.log('Sending note:', note);
   return api.post("notes/", {
     ...note,
     pinned: false
