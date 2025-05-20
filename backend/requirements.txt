@@ -4,3 +4,4 @@ django-cors-headers
 gunicorn
 python-decouple
 psycopg2-binary
+python-dotenv
