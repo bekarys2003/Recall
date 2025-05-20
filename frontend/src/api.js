@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "recall-op1f.onrender.com/api/",
+  baseURL: "https://recall-op1f.onrender.com/api/",
 });
 
 export function getNotes() {
