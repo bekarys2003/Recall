@@ -9,9 +9,16 @@ export function getNotes() {
 }
 
 export function createNote(note) {
-  return api.post("notes/", note);
+  return api.post("notes/", {
+    ...note,
+    pinned: false
+  });
 }
 
 export function deleteNote(id) {
   return api.delete(`notes/${id}/`);
+}
+
+export function updateNote(id, data) {
+  return api.patch(`notes/${id}/`, data);
 }
